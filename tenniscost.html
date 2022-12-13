@@ -1,0 +1,70 @@
+<html>
+
+<head>
+<script>
+        function calc(){
+
+			var monthlydues = document.getElementById('monthlydues').value;
+			var session = document.getElementById('session').value;
+			var daysperweek = document.getElementById('daysperweek').value;
+
+			var hourspermonth = session * daysperweek * 4;
+			document.getElementById('hoursm').value = hourspermonth;
+
+			var hourlyfee = document.getElementById('hourlyfee').value;
+			var costm = (hourspermonth * hourlyfee) / 2;
+			document.getElementById('costm').value = costm;
+
+			var total = costm + Number(monthlydues);
+			document.getElementById('total').value = total;
+
+			var costh = total / hourspermonth;
+			document.getElementById('costh').value = costh;
+
+
+        }
+</script>
+</head>
+
+<body>
+	<label>Monthly Dues:</label>
+	<input type="text" id="monthlydues">
+	<br>
+
+	<label>Session length (hours):</label>
+	<input type="text" id="session">
+	<br>
+
+	<label>Days per week:</label>
+	<input type="text" id="daysperweek">
+	<br>
+
+	<label>Hours per month:</label>
+	<input type="text" id="hoursm">
+	<br>
+
+	<label>Hourly court fee:</label>
+	<input type="text" id="hourlyfee">
+	<br>
+
+	<label>Cost per month:</label>
+	<input type="text" id="costm">
+	<br>
+
+	<label>Total:</label>
+	<input type="text" id="total">
+	<br>
+
+	<label>Cost per hour:</label>
+	<input type="text" id="costh">
+	<br>
+
+	<button type="submit" onclick="calc()">Submit</button>
+	<button type="submit" onclick="clear()">Clear</button>
+	<br><br><br>
+	<div id='msg'></div>
+
+</body>
+</html>
+
+
